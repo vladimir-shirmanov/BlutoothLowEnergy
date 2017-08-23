@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:BlutoothLowEnergy;assembly=BlutoothLowEnergy"
+             x:Class="BlutoothLowEnergy.Views.Page1"
+             BindingContext="{Binding Page1, Source={x:Static mvvm:App.Locator}}">
+    <Button Text="Navigate to second page"
+            Command="{Binding NavigateCommand}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+</ContentPage>

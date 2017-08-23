@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:BlutoothLowEnergy;assembly=BlutoothLowEnergy"
+             x:Class="BlutoothLowEnergy.Views.Page2"
+             BindingContext="{Binding Page2, Source={x:Static mvvm:App.Locator}}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Bluetooth status"
+                    Command="{Binding NavigationCommand}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            
+            <ActivityIndicator IsRunning="{Binding IsScaning}"/>
+            
+            <ListView ItemsSource="{Binding Devices}"
+                      Header="Devices">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  Detail="{Binding Id}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
